@@ -1,0 +1,35 @@
+{
+  "name": "nexalis",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@payloadcms/db-mongodb": "3.0.0-beta.42",
+    "@payloadcms/next": "3.0.0-beta.42",
+    "@payloadcms/plugin-cloud": "3.0.0-beta.42",
+    "@payloadcms/richtext-lexical": "3.0.0-beta.42",
+    "graphql": "^16.8.1",
+    "next": "^15.0.0-rc.0",
+    "payload": "3.0.0-beta.42",
+    "react": "^19.0.0-rc-99da76f23a-20240606",
+    "react-dom": "^19.0.0-rc-99da76f23a-20240606",
+    "sharp": "^0.33.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.3",
+    "postcss": "^8",
+    "prettier": "^3.3.1",
+    "prettier-plugin-tailwindcss": "^0.6.1",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
+}
