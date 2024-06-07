@@ -3,7 +3,7 @@
 import { AnimatePresence, Variants, motion } from "framer-motion";
 import { Mailbox, Menu, PhoneCall, X } from "lucide-react";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { NavLinksType } from ".";
 import { Button } from "../ui/button";
 import { createPortal } from "react-dom";
@@ -52,6 +52,8 @@ export const MobileMenu = ({ links }: { links: NavLinksType }) => {
       },
     },
   };
+
+  useEffect(() => setOpen(false), [pathname]);
 
   return (
     <>
