@@ -7,7 +7,6 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 
 import { ProductCard } from "@/components/ui/product-card";
-import { Media } from "@/payload-types";
 
 async function getProducts(q: string = "") {
   const payload = await getPayload({ config: configPromise });
