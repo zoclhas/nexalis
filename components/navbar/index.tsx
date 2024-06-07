@@ -9,13 +9,13 @@ import { MobileMenu } from "./menu";
 export const Navbar = () => {
   return (
     <>
-      <div className="bg-red-900 px-4 py-1 text-[15px] max-sm:hidden">
+      <div className="bg-red-300 px-4 py-1 text-[15px] max-sm:hidden">
         <div className="mx-auto flex max-w-7xl items-center justify-end gap-6">
           <div className="flex items-center gap-4">
             <a
               href="mailto:info@nexalisinternational.com"
               target="_blank"
-              className="flex w-max items-center gap-1 rounded-full bg-red-100 px-1 transition-colors hover:bg-red-200"
+              className="flex w-max items-center gap-1 rounded-full bg-red-100 px-1 py-0.5 transition-colors hover:bg-red-200"
             >
               <Mailbox height={18} />
               info@nexalisinternational.com
@@ -24,7 +24,7 @@ export const Navbar = () => {
             <a
               href="tel:+971555555555"
               target="_blank"
-              className="flex w-max items-center gap-1 rounded-full bg-red-100 px-1 transition-colors hover:bg-red-200"
+              className="flex w-max items-center gap-1 rounded-full bg-red-100 px-1 py-0.5 transition-colors hover:bg-red-200"
             >
               <PhoneCall height={18} />
               +971 55 555 5555
