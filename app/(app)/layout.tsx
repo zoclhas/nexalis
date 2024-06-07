@@ -1,8 +1,10 @@
-import { Navbar } from "@/components/navbar";
 import "./globals.css";
 
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
+
+import { Navbar } from "@/components/navbar";
+import { Footer } from "@/components/footer";
 
 const mont = Montserrat({ subsets: ["latin"] });
 
@@ -21,6 +23,7 @@ export default function RootLayout({
       <body className={mont.className}>
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

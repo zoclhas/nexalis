@@ -1,0 +1,22 @@
+import NexalisLogo from "@/public/logo.png";
+import Image from "next/image";
+
+export const Footer = () => {
+  return (
+    <footer className="bg-red-950">
+      <div className="mx-auto max-w-7xl max-xl:px-4">
+        <div className="grid w-max rounded-b-xl bg-white p-4">
+          <Image
+            src={NexalisLogo}
+            alt="Nexalis logo"
+            width={160}
+            height={92}
+            quality={100}
+            loading="eager"
+            className="h-full max-h-[60px] w-max object-contain"
+          />
+        </div>
+      </div>
+    </footer>
+  );
+};

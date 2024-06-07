@@ -57,7 +57,7 @@ export const Navbar = () => {
 
 export type NavLinksType = { href: string; label: string }[];
 
-const links: NavLinksType = [
+export const links: NavLinksType = [
   {
     href: "/",
     label: "Home",
