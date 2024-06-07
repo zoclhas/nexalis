@@ -1,4 +1,4 @@
-import NexalisLogo from "@/public/nexalis.png";
+import NexalisLogo from "@/public/logo.png";
 
 import { Mailbox, PhoneCall } from "lucide-react";
 import Image from "next/image";
@@ -42,7 +42,7 @@ export const Navbar = () => {
               height={92}
               quality={100}
               loading="eager"
-              className="h-full max-h-[70px] w-max object-contain"
+              className="h-full max-h-[60px] w-max object-contain"
             />
           </Link>
 

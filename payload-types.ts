@@ -14,7 +14,9 @@ export interface Config {
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
   };
-  globals: {};
+  globals: {
+    partners: Partner;
+  };
   locale: null;
   user: User & {
     collection: 'users';
@@ -44,6 +46,7 @@ export interface Product {
     };
     [k: string]: unknown;
   };
+  description_html?: string | null;
   info?:
     | {
         title: string;
@@ -51,6 +54,7 @@ export interface Product {
         id?: string | null;
       }[]
     | null;
+  slug?: string | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -123,6 +127,22 @@ export interface PayloadMigration {
   batch?: number | null;
   updatedAt: string;
   createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "partners".
+ */
+export interface Partner {
+  id: number;
+  partners?:
+    | {
+        logo: number | Media;
+        partner: string;
+        id?: string | null;
+      }[]
+    | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
 }
 
 

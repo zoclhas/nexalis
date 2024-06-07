@@ -11,6 +11,8 @@ import { Product } from "./collections/Product";
 import { Media } from "./collections/Media";
 import { Users } from "./collections/Users";
 
+import { Partners } from "./globals/Partners";
+
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
 
@@ -19,6 +21,7 @@ export default buildConfig({
     user: Users.slug,
   },
   collections: [Product, Media, Users],
+  globals: [Partners],
   editor: lexicalEditor({
     features: ({ defaultFeatures }) => [...defaultFeatures],
   }),
@@ -32,7 +35,5 @@ export default buildConfig({
     },
   }),
   sharp,
-  plugins: [
-    // storage-adapter-placeholder
-  ],
+  plugins: [],
 });

@@ -1,8 +1,15 @@
+import { formatSlug } from "@/lib/format";
+import {
+  HTMLConverterFeature,
+  lexicalEditor,
+  lexicalHTML,
+} from "@payloadcms/richtext-lexical";
 import type { CollectionConfig } from "payload/types";
 
 export const Product: CollectionConfig = {
   slug: "product",
   admin: {
+    group: "Product",
     useAsTitle: "title",
     defaultColumns: ["title", "alt", "createdAt", "updatedAt"],
   },
@@ -32,8 +39,15 @@ export const Product: CollectionConfig = {
       name: "description",
       label: "Product Description",
       type: "richText",
+      editor: lexicalEditor({
+        features: ({ defaultFeatures }) => [
+          ...defaultFeatures,
+          HTMLConverterFeature(),
+        ],
+      }),
       required: true,
     },
+    lexicalHTML("description", { name: "description_html" }),
 
     {
       name: "info",
@@ -52,6 +66,15 @@ export const Product: CollectionConfig = {
         },
       ],
       minRows: 1,
+    },
+
+    {
+      name: "slug",
+      type: "text",
+      admin: { position: "sidebar" },
+      hooks: {
+        beforeValidate: [formatSlug("title")],
+      },
     },
   ],
 };
