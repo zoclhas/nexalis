@@ -19,6 +19,7 @@ async function getProducts() {
   const products = await payload.find({
     collection: "product",
     limit: 4,
+    sort: "-updatedAt",
   });
   return products;
 }
@@ -288,12 +289,12 @@ export default async function Home() {
 
               <li>
                 <a
-                  href="tel:+971555555555"
+                  href="tel:+971553511282"
                   target="_blank"
                   className="flex w-max items-center gap-1 rounded-full bg-zinc-100 p-2 transition-colors hover:bg-zinc-200"
                 >
                   <PhoneCall height={18} />
-                  +971 55 555 5555
+                  +971 55 351 1282
                 </a>
               </li>
             </ul>

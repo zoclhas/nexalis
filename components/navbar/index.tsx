@@ -22,12 +22,12 @@ export const Navbar = () => {
             </a>
 
             <a
-              href="tel:+971555555555"
+              href="tel:+971553511282"
               target="_blank"
               className="flex w-max items-center gap-1 rounded-full bg-red-100 px-1 py-0.5 transition-colors hover:bg-red-200"
             >
               <PhoneCall height={18} />
-              +971 55 555 5555
+              +971 55 351 1282
             </a>
           </div>
         </div>
