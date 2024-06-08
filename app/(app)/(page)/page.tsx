@@ -322,20 +322,18 @@ export default async function Home() {
                   <PhoneCall height={18} />
                   +971 55 351 1282
                 </a>
-
               </li>
 
-	      <li>
-
+              <li>
                 <a
-                  href="tel:+971553511282"
+                  href="tel:+971542793483"
                   target="_blank"
                   className="flex w-max items-center gap-1 rounded-full bg-zinc-100 p-2 transition-colors hover:bg-zinc-200"
                 >
                   <WhatsAppIcon height={18} />
-                  +971 55 351 1282
+                  +971 54 279 3483
                 </a>
-	      </li>
+              </li>
             </ul>
           </div>
 

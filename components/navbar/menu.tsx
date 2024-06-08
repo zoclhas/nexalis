@@ -134,12 +134,12 @@ export const MobileMenu = ({ links }: { links: NavLinksType }) => {
 
               <motion.a
                 variants={listItem}
-                href="tel:+971553511282"
+                href="tel:+971542793483"
                 target="_blank"
                 className="flex w-max items-center gap-1 rounded-full bg-zinc-100 p-2 transition-colors hover:bg-zinc-200"
               >
                 <WhatsAppIcon height={18} />
-                +971 55 351 1282
+                +971 54 279 3483
               </motion.a>
             </motion.div>
           </div>
