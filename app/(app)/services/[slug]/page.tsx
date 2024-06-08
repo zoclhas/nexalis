@@ -93,3 +93,14 @@ export default async function ServiceSlug({
     </main>
   );
 }
+
+export async function generateStaticParams() {
+  const payload = await getPayload({ config: configPromise });
+
+  const serviceDocs = await payload.find({
+    collection: "service",
+    limit: 100,
+  });
+
+  return serviceDocs.docs.map((d) => ({ slug: d.slug }));
+}

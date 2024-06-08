@@ -67,10 +67,10 @@ export default async function Services({
 
         <form className="mt-20" action={submitForm}>
           <div className="flex items-end justify-between gap-2">
-            <label htmlFor="search">Search Products</label>
+            <label htmlFor="search">Search Services</label>
             {query && (
               <Button variant="outline" size="sm" asChild>
-                <Link href="/products">
+                <Link href="/services">
                   <X height={18} /> Clear
                 </Link>
               </Button>
@@ -98,9 +98,9 @@ export default async function Services({
           ) : null}
 
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {services.map((product) => (
+            {services.map((service) => (
               // @ts-ignore
-              <ProductCard key={product.id} props={product} href="/services" />
+              <ProductCard key={service.id} props={service} href="/services" />
             ))}
           </div>
         </div>
