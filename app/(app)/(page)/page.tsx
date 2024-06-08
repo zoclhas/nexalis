@@ -190,6 +190,7 @@ export default async function Home() {
                     width="32"
                     height="32"
                     viewBox="0 0 32 32"
+                    className="min-w-[30px]"
                   >
                     <path
                       d="M5,4h6V28H5c-2.208,0-4-1.792-4-4V8c0-2.208,1.792-4,4-4Z"
@@ -211,7 +212,10 @@ export default async function Home() {
                       opacity=".2"
                     ></path>
                   </svg>
-                  <p>PO Box: 105875, Mussaffah, Abu Dhabi, UAE</p>
+                  <p>
+                    Store 3 Block 11, Sector - 7A1, Al Saqlawi St, ICAD 1, Abu
+                    Dhabi
+                  </p>
                 </li>
 
                 <li className="flex items-center gap-2">
@@ -220,6 +224,7 @@ export default async function Home() {
                     width="32"
                     height="32"
                     viewBox="0 0 32 32"
+                    className="min-w-[30px]"
                   >
                     <path fill="#fff" d="M1 11H31V21H1z"></path>
                     <path
@@ -242,7 +247,10 @@ export default async function Home() {
                       opacity=".2"
                     ></path>
                   </svg>
-                  <p>PO Box: 105875, Mussaffah, Abu Dhabi, UAE</p>
+                  <p>
+                    Office No: 310/13, 3rd Floor, Business Gate Center, Beach
+                    One Building, Al Qurum, Muscat, Oman
+                  </p>
                 </li>
 
                 <li className="flex items-center gap-2">
@@ -251,13 +259,23 @@ export default async function Home() {
                     width="32"
                     height="32"
                     viewBox="0 0 32 32"
+                    className="min-w-[30px]"
                   >
+                    <rect
+                      x="1"
+                      y="4"
+                      width="30"
+                      height="24"
+                      rx="4"
+                      ry="4"
+                      fill="#cd312c"
+                    ></rect>
                     <path
-                      d="M27,4H9V28H27c2.209,0,4-1.791,4-4V8c0-2.209-1.791-4-4-4Z"
-                      fill="#801d36"
+                      d="M11,20v8H27c2.209,0,4-1.791,4-4v-4H11Z"
+                      fill="#377d41"
                     ></path>
                     <path
-                      d="M10,23.2l6-2.4-6-2.4,6-2.4-6-2.4,6-2.4-6-2.4,6-2.4-6-2.4H5c-2.209,0-4,1.791-4,4V24c0,2.209,1.791,4,4,4h5l6-2.4-6-2.4Z"
+                      d="M27,4H11V12H31v-4c0-2.209-1.791-4-4-4Z"
                       fill="#fff"
                     ></path>
                     <path
@@ -269,8 +287,15 @@ export default async function Home() {
                       fill="#fff"
                       opacity=".2"
                     ></path>
+                    <path
+                      d="M9.225,12.667c-.582-.605-1.779-1.187-2.217-2.117-.004-.002-.004-.007,0-.009-.045-.239,.096-.503,.28-.627,.025,.382,.576,.11,.756,.091-.158,.409,1.087,.14,1.224,.213,.213,.02,.083-.53,.117-.632-.012-.162-1.501-.257-1.341,.104-.184,.036-.208-.181-.46-.151,1.727-2.926,1.109-3.078-.512-.206l.044,.02c-.209,.32-.015-.35-.105-.484h0v-.093c-.112,.006-.27-.065-.248-.18h-.007v-.002h-.037s0-.18,0-.18h-.036v-.364h-.037v-.23h.013c.405-.478,.577-.41-.148-.819-.706,.4-.55,.321-.182,.819h.013v.23h-.036v.364h-.036v.181h-.038s-.007,.001-.007,.001c.027,.085-.1,.186-.248,.181v.167h0c-.124,.175,.068,.358-.022,.539-.034-.046-.064-.089-.093-.13l.044-.02c-1.604-2.844-2.245-2.741-.529,.176-.247-.012-.251,.192-.442,.152,.13-.359-1.088-.21-1.224-.183-.191,.038-.112,.528-.117,.632-.007,.162,1.532,.273,1.341-.134,.198-.004,.566,.269,.746,.002,.117,.044,.224,.138,.275,.262h-.002s-.008,.008-.008,.008c.012,.245-1.2,.201-1.297,.201,.006,0-.125,.007-.124,.002-1.004,.066,.447,.71,.447,.71,0,0,.394,.099,.439,.099-1.192,.878-1.641,2.056-.529,1.076,0,0,.76-.864,1.268-1.024,.069-.014,.571-.2,.596-.222,.47,.476,.953,.87,1.175,1.093s2.063,1.223,1.305,.486Z"
+                      fill="#fff"
+                    ></path>
                   </svg>
-                  <p>PO Box: 105875, Mussaffah, Abu Dhabi, UAE</p>
+                  <p>
+                    Office No: 701/03, Floor 7, Al Kaabi Tower, St No 977 - Zone
+                    18, Al Safiliya Area
+                  </p>
                 </li>
               </ul>
             </div>

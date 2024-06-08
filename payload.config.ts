@@ -7,11 +7,13 @@ import sharp from "sharp";
 import { fileURLToPath } from "url";
 
 import { Product } from "./collections/Product";
+import { Service } from "./collections/Service";
 
 import { Media } from "./collections/Media";
 import { Users } from "./collections/Users";
 
 import { Partners } from "./globals/Partners";
+import { Clients } from "./globals/Clients";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -20,8 +22,8 @@ export default buildConfig({
   admin: {
     user: Users.slug,
   },
-  collections: [Product, Media, Users],
-  globals: [Partners],
+  collections: [Product, Service, Media, Users],
+  globals: [Partners, Clients],
   editor: lexicalEditor({
     features: ({ defaultFeatures }) => [...defaultFeatures],
   }),

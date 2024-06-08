@@ -67,7 +67,11 @@ export const links: NavLinksType = [
     label: "Products",
   },
   {
-    href: "/projects",
-    label: "Projects",
+    href: "/services",
+    label: "Services",
+  },
+  {
+    href: "/our-clients",
+    label: "Our Clients",
   },
 ];

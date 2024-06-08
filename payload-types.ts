@@ -9,6 +9,7 @@
 export interface Config {
   collections: {
     product: Product;
+    service: Service;
     media: Media;
     users: User;
     'payload-preferences': PayloadPreference;
@@ -16,6 +17,7 @@ export interface Config {
   };
   globals: {
     partners: Partner;
+    clients: Client;
   };
   locale: null;
   user: User & {
@@ -79,6 +81,42 @@ export interface Media {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "service".
+ */
+export interface Service {
+  id: number;
+  image: number | Media;
+  title: string;
+  alt: string;
+  description: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  description_html?: string | null;
+  info?:
+    | {
+        title: string;
+        description: string;
+        id?: string | null;
+      }[]
+    | null;
+  slug?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "users".
  */
 export interface User {
@@ -138,6 +176,22 @@ export interface Partner {
     | {
         logo: number | Media;
         partner: string;
+        id?: string | null;
+      }[]
+    | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "clients".
+ */
+export interface Client {
+  id: number;
+  clients?:
+    | {
+        logo: number | Media;
+        client: string;
         id?: string | null;
       }[]
     | null;

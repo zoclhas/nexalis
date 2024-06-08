@@ -6,8 +6,8 @@ import {
 } from "@payloadcms/richtext-lexical";
 import type { CollectionConfig } from "payload/types";
 
-export const Product: CollectionConfig = {
-  slug: "product",
+export const Service: CollectionConfig = {
+  slug: "service",
   admin: {
     group: "Products & Services",
     useAsTitle: "title",
@@ -16,28 +16,28 @@ export const Product: CollectionConfig = {
   fields: [
     {
       name: "image",
-      label: "Product Image",
+      label: "Service Image",
       type: "upload",
       relationTo: "media",
       required: true,
     },
     {
       name: "title",
-      label: "Product Title",
+      label: "Service Title",
       type: "text",
       required: true,
       admin: { position: "sidebar" },
     },
     {
       name: "alt",
-      label: "Product Alt",
+      label: "Service Alt",
       type: "text",
       required: true,
       admin: { position: "sidebar" },
     },
     {
       name: "description",
-      label: "Product Description",
+      label: "Service Description",
       type: "richText",
       editor: lexicalEditor({
         features: ({ defaultFeatures }) => [
@@ -51,7 +51,7 @@ export const Product: CollectionConfig = {
 
     {
       name: "info",
-      label: "Product Info",
+      label: "Service Info",
       type: "array",
       fields: [
         {

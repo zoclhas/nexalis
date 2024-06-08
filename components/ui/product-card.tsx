@@ -4,12 +4,14 @@ import Link from "next/link";
 
 export const ProductCard = ({
   props,
+  href = "/products",
 }: {
   props: Product & { image: Media };
+  href?: string;
 }) => {
   return (
     <Link
-      href={`/products/${props.slug}`}
+      href={`${href}/${props.slug}`}
       className="flex flex-col overflow-hidden rounded-2xl bg-zinc-100 shadow-[0_4px_24px_-4px_rgb(0,0,0,0.1)] transition-shadow hover:shadow-[0_6px_28px_-2px_rgb(0,0,0,0.15)]"
     >
       <Image
