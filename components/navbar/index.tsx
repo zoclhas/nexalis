@@ -11,7 +11,14 @@ export const Navbar = () => {
   return (
     <>
       <div className="bg-red-300 px-4 py-1 text-[15px] max-sm:hidden">
-        <div className="mx-auto flex max-w-7xl items-center justify-end gap-6">
+        <div className="mx-auto flex max-w-7xl items-center justify-end gap-6 md:justify-between">
+          <Link
+            href="/#contact"
+            className="font-medium text-black transition-colors hover:text-red-950 max-md:hidden"
+          >
+            Get in touch
+          </Link>
+
           <div className="flex items-center gap-4">
             <a
               href="mailto:info@nexalisinternational.com"
@@ -43,7 +50,7 @@ export const Navbar = () => {
       </div>
       <nav className="sticky top-0 z-[1000] bg-white">
         <header className="mx-auto flex h-[70px] max-w-7xl items-center justify-between py-4 max-xl:px-4">
-          <Link href="/">
+          <Link href="/" className="max-w-16">
             <Image
               src={NexalisLogo}
               alt="Nexalis logo"
@@ -78,6 +85,10 @@ export const links: NavLinksType = [
   {
     href: "/services",
     label: "Services",
+  },
+  {
+    href: "/our-facilities",
+    label: "Our Facilities",
   },
   {
     href: "/our-clients",

@@ -29,7 +29,7 @@ export const Footer = () => {
           />
         </div>
 
-        <div className="flex grow items-center justify-between">
+        <div className="flex grow items-center max-lg:flex-col max-lg:justify-center lg:justify-between">
           <p className="text-red-200 max-sm:text-sm">
             &copy; {new Date().getFullYear()} Nexalis International
           </p>

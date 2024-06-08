@@ -182,7 +182,7 @@ export default async function Home() {
         </section>
       </div>
 
-      <section>
+      <section id="contact">
         <div>
           <strong className="text-sm font-medium text-red-900 md:text-base">
             Get in touch
@@ -313,7 +313,7 @@ export default async function Home() {
               </ul>
             </div>
 
-            <ul className="flex flex-col gap-2">
+            <ul className="flex flex-wrap gap-2">
               <li>
                 <a
                   href="mailto:info@nexalisinternational.com"
