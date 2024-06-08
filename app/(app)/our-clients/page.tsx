@@ -3,6 +3,12 @@ import configPromise from "@payload-config";
 import Image from "next/image";
 import { Media } from "@/payload-types";
 
+import { meta } from "@/lib/meta";
+export const metadata = meta({
+  title: "Our Clients",
+  description: "Our clients from our executed and current projects",
+});
+
 async function getClients() {
   const payload = await getPayload({ config: configPromise });
 

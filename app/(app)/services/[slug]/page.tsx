@@ -8,6 +8,22 @@ import Link from "next/link";
 import { ChevronLeft } from "lucide-react";
 import { twMerge } from "tailwind-merge";
 
+import { Metadata } from "next";
+import { meta } from "@/lib/meta";
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  const service = await getService(params.slug);
+
+  return meta({
+    title: service.title,
+    image: (service.image as Media).url!,
+    size: "card",
+  });
+}
+
 async function getService(slug: string) {
   const payload = await getPayload({ config: configPromise });
 

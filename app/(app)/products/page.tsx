@@ -8,6 +8,12 @@ import { redirect } from "next/navigation";
 
 import { ProductCard } from "@/components/ui/product-card";
 
+import { meta } from "@/lib/meta";
+export const metadata = meta({
+  title: "Products",
+  description: "Nexalis Products",
+});
+
 async function getProducts(q: string = "") {
   const payload = await getPayload({ config: configPromise });
 
