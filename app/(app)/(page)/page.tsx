@@ -12,6 +12,7 @@ import { InfiniteMovingCards } from "@/components/ui/infinite-scroll";
 import { Media } from "@/payload-types";
 import { Mailbox, PhoneCall } from "lucide-react";
 import { Form } from "./form";
+import { WhatsAppIcon } from "@/lib/icons/socials";
 
 async function getProducts() {
   const payload = await getPayload({ config: configPromise });
@@ -321,7 +322,20 @@ export default async function Home() {
                   <PhoneCall height={18} />
                   +971 55 351 1282
                 </a>
+
               </li>
+
+	      <li>
+
+                <a
+                  href="tel:+971553511282"
+                  target="_blank"
+                  className="flex w-max items-center gap-1 rounded-full bg-zinc-100 p-2 transition-colors hover:bg-zinc-200"
+                >
+                  <WhatsAppIcon height={18} />
+                  +971 55 351 1282
+                </a>
+	      </li>
             </ul>
           </div>
 

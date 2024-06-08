@@ -8,6 +8,7 @@ import { NavLinksType } from ".";
 import { Button } from "../ui/button";
 import { createPortal } from "react-dom";
 import Link from "next/link";
+import { WhatsAppIcon } from "@/lib/icons/socials";
 
 export const MobileMenu = ({ links }: { links: NavLinksType }) => {
   const [open, setOpen] = useState(false);
@@ -128,6 +129,16 @@ export const MobileMenu = ({ links }: { links: NavLinksType }) => {
                 className="flex w-max items-center gap-1 rounded-full bg-zinc-100 p-2 transition-colors hover:bg-zinc-200"
               >
                 <PhoneCall height={18} />
+                +971 55 351 1282
+              </motion.a>
+
+              <motion.a
+                variants={listItem}
+                href="tel:+971553511282"
+                target="_blank"
+                className="flex w-max items-center gap-1 rounded-full bg-zinc-100 p-2 transition-colors hover:bg-zinc-200"
+              >
+                <WhatsAppIcon height={18} />
                 +971 55 351 1282
               </motion.a>
             </motion.div>

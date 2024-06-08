@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { NavLinks } from "./nav-links";
 import { MobileMenu } from "./menu";
+import { WhatsAppIcon } from "@/lib/icons/socials";
 
 export const Navbar = () => {
   return (
@@ -27,6 +28,14 @@ export const Navbar = () => {
               className="flex w-max items-center gap-1 rounded-full bg-red-100 px-1 py-0.5 transition-colors hover:bg-red-200"
             >
               <PhoneCall height={18} />
+              +971 55 351 1282
+            </a>
+            <a
+              href="tel:+971553511282"
+              target="_blank"
+              className="flex w-max items-center gap-1 rounded-full bg-red-100 px-1 py-0.5 transition-colors hover:bg-red-200"
+            >
+              <WhatsAppIcon height={18} />
               +971 55 351 1282
             </a>
           </div>
