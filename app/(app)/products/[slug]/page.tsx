@@ -1,15 +1,15 @@
-import { getPayload } from "payload";
-import configPromise from "@payload-config";
-import { notFound } from "next/navigation";
-import Image from "next/image";
-import { Media } from "@/payload-types";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import { Media } from "@/payload-types";
+import configPromise from "@payload-config";
 import { ChevronLeft } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { getPayload } from "payload";
 import { twMerge } from "tailwind-merge";
 
-import { Metadata } from "next";
 import { meta } from "@/lib/meta";
+import { Metadata } from "next";
 export async function generateMetadata({
   params,
 }: {

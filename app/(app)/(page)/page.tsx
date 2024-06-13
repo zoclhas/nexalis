@@ -1,18 +1,18 @@
-import HeaderImage from "@/public/slider-c.jpeg";
-import Logo from "@/public/logo.png";
 import Grid from "@/public/grid.png";
+import Logo from "@/public/logo.png";
+import HeaderImage from "@/public/slider-c.jpeg";
 
-import Image from "next/image";
-import { getPayload } from "payload";
-import configPromise from "@payload-config";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import { ProductCard } from "@/components/ui/product-card";
 import { InfiniteMovingCards } from "@/components/ui/infinite-scroll";
-import { Media } from "@/payload-types";
-import { Mailbox, PhoneCall } from "lucide-react";
-import { Form } from "./form";
+import { ProductCard } from "@/components/ui/product-card";
 import { WhatsAppIcon } from "@/lib/icons/socials";
+import { Media } from "@/payload-types";
+import configPromise from "@payload-config";
+import { Mailbox, PhoneCall } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { getPayload } from "payload";
+import { Form } from "./form";
 
 export const metadata = {
   title: "Nexalis International - Oil & Gas",
@@ -227,7 +227,7 @@ export default async function Home() {
                   </svg>
                   <p>
                     Store 3 Block 11, Sector - 7A1, Al Saqlawi St, ICAD 1, Abu
-                    Dhabi
+                    Dhabi, UAE
                   </p>
                 </li>
 
@@ -261,8 +261,8 @@ export default async function Home() {
                     ></path>
                   </svg>
                   <p>
-                    Office No: 310/13, 3rd Floor, Business Gate Center, Beach
-                    One Building, Al Qurum, Muscat, Oman
+                    Office No: 701/03, Floor 7, Al Kaabi Tower, St No 977 - Zone
+                    18, Al Safiliya Area, Kuwait
                   </p>
                 </li>
 
@@ -306,8 +306,8 @@ export default async function Home() {
                     ></path>
                   </svg>
                   <p>
-                    Office No: 701/03, Floor 7, Al Kaabi Tower, St No 977 - Zone
-                    18, Al Safiliya Area
+                    Office No: 310/13, 3rd Floor, Business Gate Center, Beach
+                    One Building, Al Qurum, Muscat, Oman
                   </p>
                 </li>
               </ul>

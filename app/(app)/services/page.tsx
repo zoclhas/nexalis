@@ -10,7 +10,7 @@ import { ProductCard } from "@/components/ui/product-card";
 
 import { meta } from "@/lib/meta";
 export const metadata = meta({
-  title: "Products",
+  title: "Services",
   description: "Nexalis Products",
 });
 
