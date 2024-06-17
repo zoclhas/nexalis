@@ -65,11 +65,11 @@ async function getProjects() {
 }
 
 export default async function Home() {
-  const [productDocs, partners, clients] = await Promise.all([
+  const [productDocs, partners, clients, projects] = await Promise.all([
     getProducts(),
     getPartners(),
     getClients(),
-    // getProjects(),
+    getProjects(),
   ]);
   const products = productDocs.docs;
 
@@ -229,16 +229,16 @@ export default async function Home() {
             </h1>
           </div>
 
-          {/* <ul className="mt-12 flex flex-wrap gap-2"> */}
-          {/*   {projects.projects!.map((p) => ( */}
-          {/*     <li */}
-          {/*       key={p.id} */}
-          {/*       className="grow rounded border border-zinc-200 bg-white p-1.5 text-sm flex items-center justify-center text-center" */}
-          {/*     > */}
-          {/*       {p.title} */}
-          {/*     </li> */}
-          {/*   ))} */}
-          {/* </ul> */}
+          <ul className="mt-12 flex flex-wrap gap-2">
+            {projects.projects!.map((p) => (
+              <li
+                key={p.id}
+                className="flex grow items-center justify-center rounded border border-zinc-200 bg-white p-1.5 text-center text-sm"
+              >
+                {p.title}
+              </li>
+            ))}
+          </ul>
         </section>
       </div>
 
