@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import { Search, X } from "lucide-react";
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { unstable_cache } from "next/cache";
 
 import { ProductCard } from "@/components/ui/product-card";
 

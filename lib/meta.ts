@@ -2,6 +2,7 @@ import { Metadata } from "next";
 
 export function meta({ title, description, image, size }: MetaProps): Metadata {
   return {
+    metadataBase: new URL(process.env.URL!),
     title: `${title} | Nexalis International - Oil & Gas`,
     description,
     openGraph: {

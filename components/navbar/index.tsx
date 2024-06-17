@@ -28,23 +28,6 @@ export const Navbar = () => {
               <Mailbox height={18} />
               info@nexalisinternational.com
             </a>
-
-            <a
-              href="tel:+971553511282"
-              target="_blank"
-              className="flex w-max items-center gap-1 rounded-full bg-red-100 px-1 py-0.5 transition-colors hover:bg-red-200"
-            >
-              <PhoneCall height={18} />
-              +971 55 351 1282
-            </a>
-            <a
-              href="tel:+971542793483"
-              target="_blank"
-              className="flex w-max items-center gap-1 rounded-full bg-red-100 px-1 py-0.5 transition-colors hover:bg-red-200"
-            >
-              <WhatsAppIcon height={18} />
-              +971 54 279 3483
-            </a>
           </div>
         </div>
       </div>
@@ -58,7 +41,7 @@ export const Navbar = () => {
               height={92}
               quality={100}
               loading="eager"
-              className="h-full max-h-[60px] w-max object-contain"
+              className="h-full max-h-[50px] w-max object-contain sm:max-h-[60px]"
             />
           </Link>
 

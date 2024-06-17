@@ -69,7 +69,7 @@ export const MobileMenu = ({ links }: { links: NavLinksType }) => {
 
       <AnimatePresenceWrapper active={open}>
         <motion.div
-          className="fixed inset-0 z-[2000] h-screen w-screen bg-white/50 backdrop-blur-lg"
+          className="fixed inset-0 z-[2000] h-screen w-screen bg-white/80 backdrop-blur-lg"
           variants={{
             hidden: { opacity: 0 },
             show: { opacity: 1 },
@@ -104,6 +104,12 @@ export const MobileMenu = ({ links }: { links: NavLinksType }) => {
                   </Link>
                 </motion.li>
               ))}
+
+              <motion.li variants={listItem}>
+                <Link href="/#contact" className="text-3xl font-medium">
+                  Contact Us
+                </Link>
+              </motion.li>
             </motion.ul>
 
             <motion.div
@@ -120,26 +126,6 @@ export const MobileMenu = ({ links }: { links: NavLinksType }) => {
               >
                 <Mailbox height={18} />
                 info@nexalisinternational.com
-              </motion.a>
-
-              <motion.a
-                variants={listItem}
-                href="tel:+971553511282"
-                target="_blank"
-                className="flex w-max items-center gap-1 rounded-full bg-zinc-100 p-2 transition-colors hover:bg-zinc-200"
-              >
-                <PhoneCall height={18} />
-                +971 55 351 1282
-              </motion.a>
-
-              <motion.a
-                variants={listItem}
-                href="tel:+971542793483"
-                target="_blank"
-                className="flex w-max items-center gap-1 rounded-full bg-zinc-100 p-2 transition-colors hover:bg-zinc-200"
-              >
-                <WhatsAppIcon height={18} />
-                +971 54 279 3483
               </motion.a>
             </motion.div>
           </div>
