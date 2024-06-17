@@ -65,11 +65,11 @@ async function getProjects() {
 }
 
 export default async function Home() {
-  const [productDocs, partners, clients, projects] = await Promise.all([
+  const [productDocs, partners, clients] = await Promise.all([
     getProducts(),
     getPartners(),
     getClients(),
-    getProjects(),
+    // getProjects(),
   ]);
   const products = productDocs.docs;
 
