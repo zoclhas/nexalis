@@ -18,6 +18,7 @@ export interface Config {
   globals: {
     partners: Partner;
     clients: Client;
+    'projects-exec': ProjectsExec;
   };
   locale: null;
   user: User & {
@@ -192,6 +193,21 @@ export interface Client {
     | {
         logo: number | Media;
         client: string;
+        id?: string | null;
+      }[]
+    | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "projects-exec".
+ */
+export interface ProjectsExec {
+  id: number;
+  projects?:
+    | {
+        title: string;
         id?: string | null;
       }[]
     | null;

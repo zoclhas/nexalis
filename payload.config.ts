@@ -14,6 +14,7 @@ import { Users } from "./collections/Users";
 
 import { Partners } from "./globals/Partners";
 import { Clients } from "./globals/Clients";
+import { Projects } from "./globals/Projects";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -23,7 +24,7 @@ export default buildConfig({
     user: Users.slug,
   },
   collections: [Product, Service, Media, Users],
-  globals: [Partners, Clients],
+  globals: [Partners, Clients, Projects],
   editor: lexicalEditor({
     features: ({ defaultFeatures }) => [...defaultFeatures],
   }),

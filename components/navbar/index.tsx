@@ -1,11 +1,10 @@
 import NexalisLogo from "@/public/logo.png";
 
-import { Mailbox, PhoneCall } from "lucide-react";
+import { Mailbox } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { NavLinks } from "./nav-links";
 import { MobileMenu } from "./menu";
-import { WhatsAppIcon } from "@/lib/icons/socials";
+import { NavLinks } from "./nav-links";
 
 export const Navbar = () => {
   return (

@@ -46,10 +46,30 @@ async function getPartners() {
   return partners;
 }
 
+async function getClients() {
+  const payload = await getPayload({ config: configPromise });
+
+  const clients = await payload.findGlobal({
+    slug: "clients",
+  });
+  return clients;
+}
+
+async function getProjects() {
+  const payload = await getPayload({ config: configPromise });
+
+  const projects = await payload.findGlobal({
+    slug: "projects-exec",
+  });
+  return projects;
+}
+
 export default async function Home() {
-  const [productDocs, partners] = await Promise.all([
+  const [productDocs, partners, clients, projects] = await Promise.all([
     getProducts(),
     getPartners(),
+    getClients(),
+    getProjects(),
   ]);
   const products = productDocs.docs;
 
@@ -134,30 +154,6 @@ export default async function Home() {
         </Button>
       </section>
 
-      <section>
-        <div className="flex flex-col gap-3 rounded-3xl bg-zinc-100 p-4">
-          <h2 className="pt-8 text-center text-3xl font-semibold">
-            Our Partners
-          </h2>
-          <InfiniteMovingCards>
-            {partners.partners!.map((p) => (
-              <li key={p.id} className="flex items-center justify-center px-4">
-                <Image
-                  src={(p.logo as Media).url!}
-                  alt={p.partner}
-                  width={(p.logo as Media).width!}
-                  height={(p.logo as Media).height!}
-                  className="object-cover object-center saturate-0"
-                  style={{
-                    imageRendering: "pixelated",
-                  }}
-                />
-              </li>
-            ))}
-          </InfiniteMovingCards>
-        </div>
-      </section>
-
       <div className="bg-zinc-100">
         <section>
           <div>
@@ -179,6 +175,70 @@ export default async function Home() {
             quality have enabled the Company to attain and sustain leadership in
             its major lines of business
           </p>
+        </section>
+      </div>
+
+      <section>
+        <div className="flex flex-col gap-3 rounded-3xl bg-zinc-100 p-4">
+          <h2 className="pt-8 text-center text-3xl font-semibold">
+            Partners & Clients
+          </h2>
+          <InfiniteMovingCards>
+            {partners.partners!.map((p) => (
+              <li key={p.id} className="flex items-center justify-center px-4">
+                <Image
+                  src={(p.logo as Media).url!}
+                  alt={p.partner}
+                  width={(p.logo as Media).width!}
+                  height={(p.logo as Media).height!}
+                  className="object-cover object-center saturate-0"
+                  style={{
+                    imageRendering: "pixelated",
+                  }}
+                />
+              </li>
+            ))}
+          </InfiniteMovingCards>
+          <InfiniteMovingCards direction="right">
+            {clients.clients!.map((c) => (
+              <li key={c.id} className="flex items-center justify-center px-4">
+                <Image
+                  src={(c.logo as Media).url!}
+                  alt={c.client}
+                  width={(c.logo as Media).width!}
+                  height={(c.logo as Media).height!}
+                  className="object-cover object-center saturate-0"
+                  style={{
+                    imageRendering: "pixelated",
+                  }}
+                />
+              </li>
+            ))}
+          </InfiniteMovingCards>
+        </div>
+      </section>
+
+      <div className="bg-zinc-100">
+        <section>
+          <div>
+            <strong className="text-sm font-medium text-red-900 md:text-base">
+              Exectuted Projects
+            </strong>
+            <h1 className="mt-2 text-[clamp(2rem,3vw,8rem)] font-semibold uppercase leading-[clamp(1.75rem,2.75vw,7.75rem)]">
+              Projects
+            </h1>
+          </div>
+
+          <ul className="mt-12 flex flex-wrap gap-2">
+            {projects.projects!.map((p) => (
+              <li
+                key={p.id}
+                className="grow rounded border border-zinc-200 bg-white p-1.5 text-sm flex items-center justify-center text-center"
+              >
+                {p.title}
+              </li>
+            ))}
+          </ul>
         </section>
       </div>
 

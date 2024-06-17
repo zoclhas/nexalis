@@ -1,14 +1,13 @@
 "use client";
 
 import { AnimatePresence, Variants, motion } from "framer-motion";
-import { Mailbox, Menu, PhoneCall, X } from "lucide-react";
+import { Mailbox, Menu, X } from "lucide-react";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { NavLinksType } from ".";
 import { Button } from "../ui/button";
-import { createPortal } from "react-dom";
-import Link from "next/link";
-import { WhatsAppIcon } from "@/lib/icons/socials";
 
 export const MobileMenu = ({ links }: { links: NavLinksType }) => {
   const [open, setOpen] = useState(false);
