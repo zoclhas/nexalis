@@ -70,3 +70,7 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+div[data-vaul-overlay] {
+  z-index: 999 !important;
+}
