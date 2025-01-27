@@ -7,7 +7,7 @@ export const Service: CollectionConfig = {
   admin: {
     group: "Products & Services",
     useAsTitle: "title",
-    defaultColumns: ["title", "alt", "createdAt", "updatedAt"],
+    defaultColumns: ["title", "createdAt", "updatedAt"],
   },
   fields: [
     {
@@ -24,13 +24,13 @@ export const Service: CollectionConfig = {
       required: true,
       admin: { position: "sidebar" },
     },
-    {
-      name: "alt",
-      label: "Service Alt",
-      type: "text",
-      required: true,
-      admin: { position: "sidebar" },
-    },
+    // {
+    //   name: "alt",
+    //   label: "Service Alt",
+    //   type: "text",
+    //   required: true,
+    //   admin: { position: "sidebar" },
+    // },
     {
       name: "description",
       label: "Service Description",

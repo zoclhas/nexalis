@@ -77,7 +77,6 @@ export interface Product {
   id: number;
   image: number | Media;
   title: string;
-  alt: string;
   description: {
     root: {
       type: string;
@@ -131,7 +130,6 @@ export interface Service {
   id: number;
   image: number | Media;
   title: string;
-  alt: string;
   description: {
     root: {
       type: string;
@@ -247,7 +245,6 @@ export interface PayloadMigration {
 export interface ProductSelect<T extends boolean = true> {
   image?: T;
   title?: T;
-  alt?: T;
   description?: T;
   info?:
     | T
@@ -267,7 +264,6 @@ export interface ProductSelect<T extends boolean = true> {
 export interface ServiceSelect<T extends boolean = true> {
   image?: T;
   title?: T;
-  alt?: T;
   description?: T;
   info?:
     | T

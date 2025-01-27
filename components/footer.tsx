@@ -11,7 +11,7 @@ export const Footer = () => {
           <Image
             src={NexalisLogo}
             alt="Nexalis logo"
-            width={160}
+            width={63}
             height={92}
             quality={100}
             loading="eager"

@@ -7,7 +7,7 @@ export const Product: CollectionConfig = {
   admin: {
     group: "Products & Services",
     useAsTitle: "title",
-    defaultColumns: ["title", "alt", "createdAt", "updatedAt"],
+    defaultColumns: ["title", "createdAt", "updatedAt"],
   },
   fields: [
     {
@@ -24,13 +24,13 @@ export const Product: CollectionConfig = {
       required: true,
       admin: { position: "sidebar" },
     },
-    {
-      name: "alt",
-      label: "Product Alt",
-      type: "text",
-      required: true,
-      admin: { position: "sidebar" },
-    },
+    // {
+    //   name: "alt",
+    //   label: "Product Alt",
+    //   type: "text",
+    //   required: true,
+    //   admin: { position: "sidebar" },
+    // },
     {
       name: "description",
       label: "Product Description",

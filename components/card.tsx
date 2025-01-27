@@ -11,6 +11,13 @@ import { RichText } from "@payloadcms/richtext-lexical/react";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { MoveRight } from "lucide-react";
+import {
+  Tooltip,
+  TooltipProvider,
+  TooltipTrigger,
+  TooltipContent,
+} from "./ui/tooltip";
+import { removeUploadsConverter } from "@/lib/converters";
 
 export const ProductCard = ({
   data,
@@ -37,9 +44,21 @@ export const ProductCard = ({
         <Link href={href + data.slug}>
           <CardTitle className="!mt-4">{data.title}</CardTitle>
         </Link>
-        <CardDescription className="line-clamp-3">
-          <RichText data={data.description} />
-        </CardDescription>
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <CardDescription className="line-clamp-3">
+                <RichText data={data.description} />
+              </CardDescription>
+            </TooltipTrigger>
+            <TooltipContent className="prose prose-xl prose-zinc prose-invert max-w-96">
+              <RichText
+                converters={removeUploadsConverter}
+                data={data.description}
+              />
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
       </CardHeader>
       <CardFooter className="grid">
         <Button variant="outline" asChild>
