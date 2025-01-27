@@ -3,6 +3,7 @@ import "./globals.css";
 
 import type { Metadata, Viewport } from "next";
 import { Open_Sans, Red_Rose } from "next/font/google";
+import { Footer } from "@/components/footer";
 
 const openSans = Open_Sans({
   variable: "--font-open-sans",
@@ -35,6 +36,7 @@ export default function RootLayout({
       >
         <Navbar />
         <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );

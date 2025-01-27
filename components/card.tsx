@@ -14,7 +14,7 @@ import { MoveRight } from "lucide-react";
 
 export const ProductCard = ({
   data,
-  href = "/product/",
+  href = "/products/",
 }: {
   data: Product;
   href?: string;
@@ -42,8 +42,10 @@ export const ProductCard = ({
         </CardDescription>
       </CardHeader>
       <CardFooter className="grid">
-        <Button variant="outline">
-          View <MoveRight />
+        <Button variant="outline" asChild>
+          <Link href={href + data.slug}>
+            View <MoveRight />
+          </Link>
         </Button>
       </CardFooter>
     </Card>
