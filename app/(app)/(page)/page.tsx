@@ -1,18 +1,19 @@
 import LandingImage from "@/public/slider-c.jpeg";
 
 import config from "@payload-config";
-import { BasePayload, getPayload } from "payload";
-
+import { getPayload } from "payload";
 import { Button } from "@/components/ui/button";
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Media } from "@/payload-types";
+import type { Media } from "@/payload-types";
+import { ProductCard } from "@/components/card";
+import { unstable_cache as cache } from "next/cache";
 
 export const metadata: Metadata = {
   title: "Nexalis International - Oil & Gas",
   description:
-    "At Nexalis, we focus toward Oil & Gas industry’s core Automation, Instrumentation, Information Technology & Telecommunication sector. Our current operational territories are Middle east, Africa and East Asia. We have a fully functional Valve Automation Center based in Abu Dhabi and have offices across the Middle east. A strong, customer-focused approach and the constant quest for top-class quality have enabled the Company to attain and sustain leadership in its major lines of business.",
+    "At Nexalis, we focus toward Oil & Gas industry's core Automation, Instrumentation, Information Technology & Telecommunication sector. Our current operational territories are Middle east, Africa and East Asia. We have a fully functional Valve Automation Center based in Abu Dhabi and have offices across the Middle east. A strong, customer-focused approach and the constant quest for top-class quality have enabled the Company to attain and sustain leadership in its major lines of business.",
   openGraph: {
     images: "/logo-with-bg.jpeg",
   },
@@ -21,33 +22,46 @@ export const metadata: Metadata = {
   },
 };
 
-async function getPartners(payload: BasePayload) {
-  return payload.findGlobal({
-    slug: "partners",
-  });
-}
+const getPartnersCached = cache(
+  async () => {
+    const payload = await getPayload({ config });
+    return payload.findGlobal({
+      slug: "partners",
+    });
+  },
+  ["partners"],
+  { revalidate: 3600 },
+);
 
-async function getProducts(payload: BasePayload) {
-  return payload.find({
-    collection: "product",
-    limit: 2,
-  });
-}
+const getProductsCached = cache(
+  async () => {
+    const payload = await getPayload({ config });
+    return payload.find({
+      collection: "product",
+      limit: 2,
+    });
+  },
+  ["products"],
+  { revalidate: 3600 },
+);
 
-async function getServices(payload: BasePayload) {
-  return payload.find({
-    collection: "service",
-    limit: 2,
-  });
-}
+const getServicesCached = cache(
+  async () => {
+    const payload = await getPayload({ config });
+    return payload.find({
+      collection: "service",
+      limit: 2,
+    });
+  },
+  ["services"],
+  { revalidate: 3600 },
+);
 
 export default async function Home() {
-  const payload = await getPayload({ config });
-
   const [partners, products, services] = await Promise.all([
-    getPartners(payload),
-    getProducts(payload),
-    getServices(payload),
+    getPartnersCached(),
+    getProductsCached(),
+    getServicesCached(),
   ]);
 
   return (
@@ -87,7 +101,7 @@ export default async function Home() {
         </div>
 
         <Image
-          src={LandingImage}
+          src={LandingImage || "/placeholder.svg"}
           alt="Nexalis factory"
           width={1800}
           height={600}
@@ -108,7 +122,7 @@ export default async function Home() {
                   className="flex max-w-[250px] items-center justify-center"
                 >
                   <Image
-                    src={(p.logo as Media).url!}
+                    src={(p.logo as Media).url! || "/placeholder.svg"}
                     alt={p.partner}
                     width={(p.logo as Media).width!}
                     height={(p.logo as Media).height!}
@@ -131,12 +145,38 @@ export default async function Home() {
         />
       </section>
 
-      <section className="container relative mx-auto grid gap-4 px-4 py-16 md:grid-cols-2">
-        <div className="">
-          <h1 className="font-red-rose text-2xl font-semibold">Our Products</h1>
+      <section className="container relative mx-auto grid gap-8 px-4 py-16 lg:grid-cols-2">
+        <div className="space-y-4">
+          <div className="flex items-end justify-between gap-2">
+            <h1 className="font-red-rose text-2xl font-semibold">
+              Our Products
+            </h1>
+            <Button variant="secondary" asChild>
+              <Link href="/products">View More</Link>
+            </Button>
+          </div>
+
+          <div className="grid gap-8 sm:grid-cols-2">
+            {products.docs.map((p) => (
+              <ProductCard key={p.id} data={p} />
+            ))}
+          </div>
         </div>
-        <div className="">
-          <h1 className="font-red-rose text-2xl font-semibold">Our Services</h1>
+        <div className="space-y-4">
+          <div className="flex items-end justify-between gap-2">
+            <h1 className="font-red-rose text-2xl font-semibold">
+              Our Services
+            </h1>
+            <Button variant="secondary" asChild>
+              <Link href="/services">View More</Link>
+            </Button>
+          </div>
+
+          <div className="grid gap-8 sm:grid-cols-2">
+            {services.docs.map((p) => (
+              <ProductCard key={p.id} data={p} />
+            ))}
+          </div>
         </div>
       </section>
     </>
