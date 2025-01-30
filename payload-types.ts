@@ -35,12 +35,10 @@ export interface Config {
   globals: {
     partners: Partner;
     clients: Client;
-    projects: Project;
   };
   globalsSelect: {
     partners: PartnersSelect<false> | PartnersSelect<true>;
     clients: ClientsSelect<false> | ClientsSelect<true>;
-    projects: ProjectsSelect<false> | ProjectsSelect<true>;
   };
   locale: null;
   user: User & {
@@ -375,21 +373,6 @@ export interface Client {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "projects".
- */
-export interface Project {
-  id: number;
-  projects?:
-    | {
-        title: string;
-        id?: string | null;
-      }[]
-    | null;
-  updatedAt?: string | null;
-  createdAt?: string | null;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "partners_select".
  */
 export interface PartnersSelect<T extends boolean = true> {
@@ -414,21 +397,6 @@ export interface ClientsSelect<T extends boolean = true> {
     | {
         logo?: T;
         client?: T;
-        id?: T;
-      };
-  updatedAt?: T;
-  createdAt?: T;
-  globalType?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "projects_select".
- */
-export interface ProjectsSelect<T extends boolean = true> {
-  projects?:
-    | T
-    | {
-        title?: T;
         id?: T;
       };
   updatedAt?: T;

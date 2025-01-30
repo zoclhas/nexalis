@@ -2,7 +2,7 @@ import { GlobalConfig } from "payload";
 
 export const Clients: GlobalConfig = {
   slug: "clients",
-  label: "Clients",
+  label: "Clients & Projects Executed",
   fields: [
     {
       name: "clients",
