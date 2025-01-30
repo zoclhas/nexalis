@@ -21,6 +21,7 @@ export function Navbar() {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [open, setOpen] = useState(false);
 
   const isActive = (path: string) => pathname === path;
 
@@ -35,6 +36,8 @@ export function Navbar() {
     }
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const closeDrawer = () => setOpen(false);
 
   return (
     <>
@@ -54,10 +57,10 @@ export function Navbar() {
         </div>
       </div>
 
-      <Drawer>
+      <Drawer open={open} onOpenChange={setOpen}>
         <header
           className={cn(
-            "sticky top-0 z-[100] bg-white transition-colors",
+            "sticky top-0 z-[100] bg-white/80 backdrop-blur-xl transition-colors",
             !isScrolled && mounted && "bg-transparent",
           )}
         >
@@ -85,6 +88,9 @@ export function Navbar() {
                       className={cn(
                         "transition-colors hover:text-gray-800",
                         isActive(l.href) && "font-red-rose text-zinc-800",
+                        l.has &&
+                          pathname.includes(l.href) &&
+                          "font-red-rose text-zinc-800",
                       )}
                     >
                       <Link href={l.href}>{l.label}</Link>
@@ -116,11 +122,20 @@ export function Navbar() {
                           className={cn(
                             "transition-colors hover:text-gray-800",
                             isActive(l.href) && "font-red-rose text-zinc-800",
+                            l.has &&
+                              pathname.includes(l.href) &&
+                              "font-red-rose text-zinc-800",
                           )}
+                          onClick={closeDrawer}
                         >
                           <Link href={l.href}>{l.label}</Link>
                         </li>
                       ))}
+                      <li className="transition-colors hover:text-gray-800">
+                        <Link href="/#contact" onClick={closeDrawer}>
+                          Contact Us
+                        </Link>
+                      </li>
                     </ul>
                   </div>
                 </DrawerContent>

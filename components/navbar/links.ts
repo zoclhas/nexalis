@@ -1,4 +1,4 @@
-export type NavLinksType = { href: string; label: string }[];
+export type NavLinksType = { href: string; label: string; has?: boolean }[];
 
 export const links: NavLinksType = [
   {
@@ -8,10 +8,12 @@ export const links: NavLinksType = [
   {
     href: "/products",
     label: "Products",
+    has: true,
   },
   {
     href: "/services",
     label: "Services",
+    has: true,
   },
   {
     href: "/our-facilities",

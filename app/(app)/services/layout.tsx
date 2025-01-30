@@ -2,6 +2,7 @@ import config from "@payload-config";
 import { unstable_cache as cache } from "next/cache";
 import { getPayload } from "payload";
 import { ServiceLinks } from "./links";
+import Link from "next/link";
 
 const getServices = cache(
   async () => {
@@ -32,9 +33,12 @@ export default async function Layout({
         <div className="grid gap-8 md:grid-cols-[0.5fr_1.5fr]">
           <div className="space-y-4 text-sm">
             <div className="space-y-2">
-              <div className="h-max w-max rounded-2xl bg-zinc-100 p-2 px-6 font-medium">
+              <Link
+                href="/services"
+                className="block h-max w-max rounded-2xl bg-zinc-100 p-2 px-6 font-medium"
+              >
                 All Services
-              </div>
+              </Link>
               <ul className="list-disc pl-6">
                 <ServiceLinks services={services.docs} />
               </ul>

@@ -7,11 +7,31 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { Media } from "@/payload-types";
 import config from "@payload-config";
 import { RichText } from "@payloadcms/richtext-lexical/react";
 import { unstable_cache as cache } from "next/cache";
 import { notFound } from "next/navigation";
 import { getPayload } from "payload";
+
+import { meta } from "@/lib/utils";
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const slug = (await params).slug;
+  const services = await getService(slug);
+  if (!services.totalDocs) notFound();
+
+  const service = services.docs[0];
+
+  return meta({
+    title: service.title,
+    image: (service.image as Media).url!,
+    size: "summary_large_image",
+  });
+}
 
 const getService = cache(
   async (slug: string) => {
@@ -52,7 +72,7 @@ export default async function ServicePage({
         </article>
 
         {service.info && service.info.length > 0 ? (
-          <Table>
+          <Table className="mt-8">
             <TableCaption>Service Information</TableCaption>
             <TableHeader>
               <TableRow>

@@ -15,6 +15,25 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getPayload } from "payload";
 
+import { meta } from "@/lib/utils";
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const slug = (await params).slug;
+  const products = await getProduct(slug);
+  if (!products.totalDocs) notFound();
+
+  const product = products.docs[0];
+
+  return meta({
+    title: product.title,
+    image: (product.image as Media).url!,
+    size: "summary_large_image",
+  });
+}
+
 const getProduct = cache(
   async (slug: string) => {
     const payload = await getPayload({ config });

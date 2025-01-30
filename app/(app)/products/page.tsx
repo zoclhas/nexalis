@@ -3,6 +3,11 @@ import config from "@payload-config";
 import { unstable_cache as cache } from "next/cache";
 import { getPayload } from "payload";
 
+import { meta } from "@/lib/utils";
+export const metadata = meta({
+  title: "Our Products",
+});
+
 const getProducts = cache(
   async () => {
     const payload = await getPayload({ config });

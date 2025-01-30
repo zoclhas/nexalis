@@ -31,7 +31,7 @@ export const formatSlug =
 
 export function meta({
   title,
-  description,
+  description = "At Nexalis, we focus toward Oil & Gas industry's core Automation, Instrumentation, Information Technology & Telecommunication sector. Our current operational territories are Middle east, Africa and East Asia. We have a fully functional Valve Automation Center based in Abu Dhabi and have offices across the Middle east. A strong, customer-focused approach and the constant quest for top-class quality have enabled the Company to attain and sustain leadership in its major lines of business.",
   image,
   size = undefined,
 }: MetaProps): Metadata {
